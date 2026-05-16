@@ -1,1 +1,1 @@
-# Programowanie-obiektowe
+# Programowanie obiektowe - Duda czyni cuda
