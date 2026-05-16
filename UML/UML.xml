@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Poprawiony Diagram" id="wvI8iNs97JsuxsXfIHwF">
+    <mxGraphModel dx="3735" dy="2082" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-97" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Restauracja&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- nazwa: string&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ otworz()&lt;br/&gt;+ zamknij()&lt;/p&gt;" vertex="1">
+          <mxGeometry height="130" width="190" x="922" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-98" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«abstract»&lt;br&gt;&lt;i&gt;Pracownik&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# id: int&lt;br&gt;# imie: string&lt;br&gt;# pensja: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;i&gt;# pracuj()&lt;/i&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="130" width="190" x="525" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-99" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Kucharz&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- sekcja: string&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ gotuj()&lt;br/&gt;+ sprawdz()&lt;/p&gt;" vertex="1">
+          <mxGeometry height="100" width="160" x="425" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-100" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Kelner&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- rewir: int&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ obsluz()&lt;br/&gt;+ inkasuj()&lt;/p&gt;" vertex="1">
+          <mxGeometry height="100" width="160" x="635" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-101" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Stolik&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- numer: int&lt;br/&gt;- miejsca: int&lt;br/&gt;- status: StatusStolika&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ rezerwuj()&lt;br/&gt;+ zwolnij()&lt;/p&gt;" vertex="1">
+          <mxGeometry height="130" width="185" x="924.5" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-102" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;&amp;laquo;enum&amp;raquo;&lt;br/&gt;Status_Stolika&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;WOLNY&lt;br/&gt;ZAJETY&lt;br/&gt;REZERWACJA&lt;br/&gt;BRUDNY&lt;/p&gt;" vertex="1">
+          <mxGeometry height="120" width="165" x="1175" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-103" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Zamowienie&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: int&lt;br/&gt;- data: DateTime&lt;br/&gt;- suma: decimal&lt;br/&gt;- stan: Status&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ dodaj()&lt;br/&gt;+ usun()&lt;br/&gt;+ zatwierdz()&lt;br/&gt;+ oplac()&lt;/p&gt;" vertex="1">
+          <mxGeometry height="170" width="185" x="622" y="425" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-104" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;&amp;laquo;interface&amp;raquo;&lt;br/&gt;Rabat&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ oblicz(suma: decimal): decimal&lt;/p&gt;" vertex="1">
+          <mxGeometry height="80" width="205" x="1070" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-105" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;&amp;laquo;enum&amp;raquo;&lt;br/&gt;Status&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;NOWE&lt;br/&gt;PRZYGOTOWANIE&lt;br/&gt;GOTOWE&lt;br/&gt;ZAKONCZONE&lt;/p&gt;" vertex="1">
+          <mxGeometry height="115" width="160" x="350" y="453" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-106" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Pozycja&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- ilosc: int&lt;br/&gt;- cena: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ sumuj(): decimal&lt;br/&gt;+ rabatuj()&lt;/p&gt;" vertex="1">
+          <mxGeometry height="120" width="185" x="870" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-107" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«abstract»&lt;br&gt;&lt;i&gt;Produkt&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# nazwa: string&lt;br&gt;# bazowa: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;i&gt;# cena(): decimal&lt;/i&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="115" width="185" x="330" y="612" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-108" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Danie&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- czas: int&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cena(): decimal&lt;br/&gt;+ przygotuj()&lt;/p&gt;" vertex="1">
+          <mxGeometry height="100" width="160" x="532" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-109" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Napoj&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- litraz: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cena(): decimal&lt;br/&gt;+ schlodz()&lt;/p&gt;" vertex="1">
+          <mxGeometry height="100" width="160" x="160" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-110" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Skladnik&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- nazwa: string&lt;br/&gt;- miara: string&lt;br/&gt;- ilosc: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ zuzyj()&lt;br/&gt;+ uzupelnij()&lt;/p&gt;" vertex="1">
+          <mxGeometry height="125" width="165" x="530" y="977.5" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-111" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ProcentowyRabat&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- procent: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ oblicz(suma: decimal): decimal&lt;/p&gt;" vertex="1">
+          <mxGeometry height="85" width="220" x="1345" y="468" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-112" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ZestawRabat&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- minPozycji: int&lt;br/&gt;- procentZnizki: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ oblicz(suma: decimal): decimal&lt;/p&gt;" vertex="1">
+          <mxGeometry height="100" width="205" x="1300" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-113" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-101" style="endArrow=diamondThin;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-97">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-114" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-98" style="endArrow=diamondThin;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-97">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-115" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-99" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-98">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-116" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-100" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-98">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-117" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-101" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="9U9c5TqMnNGWsocd_bQW-102">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1170" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-118" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-103" style="endArrow=open;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-101">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-119" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-103" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="9U9c5TqMnNGWsocd_bQW-105">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="490" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-120" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-103" style="endArrow=open;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-104">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-121" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-100" style="endArrow=open;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-122" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-106" style="endArrow=diamondThin;endFill=1;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-123" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-106" style="endArrow=open;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-124" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-108" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-125" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-109" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-126" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-110" style="endArrow=diamondThin;endFill=1;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-108">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-127" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-111" style="endArrow=block;dashed=1;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-104">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9U9c5TqMnNGWsocd_bQW-128" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-112" style="endArrow=block;dashed=1;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-104">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
