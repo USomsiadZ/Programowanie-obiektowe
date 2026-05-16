@@ -6,16 +6,30 @@ namespace ZamowieniaApp.Zamowienia;
 
 public class Zamowienie
 {
-    private int Id { get; }
-    private DateTime Data { get; }
-    private decimal Suma { get; set; }
-    private Status Stan { get; set; }
-    private List<Pozycja> Pozycje { get; }
-    private Stolik Stolik { get; }
-    private Kelner Kelner { get; }
+    private int id;
+    private DateTime data;
+    private decimal suma;
+    private Status stan;
+    private List<Pozycja> pozycje;
+    private Stolik stolik;
+    private Kelner kelner;
 
-    public Zamowienie(int id)
+    public int readId => id;
+    public DateTime readData => data;
+    public decimal readSuma => suma;
+    public Status readStan => stan;
+    public List<Pozycja> readPozycje => pozycje;
+    public Stolik readStolik => stolik;
+    public Kelner readKelner => kelner;
+
+    public Zamowienie(int id, Stolik stolik, Kelner kelner)
     {
+        this.id = id;
+        this.data = DateTime.Now;
+        this.stolik = stolik;
+        this.kelner = kelner;
+        this.pozycje = new List<Pozycja>();
+        this.stan = Status.Nowe;
     }
 
     public void Dodaj(Pozycja pozycja)
@@ -33,5 +47,19 @@ public class Zamowienie
     public decimal Oplac(Rabat rabat)
     {
         return 0;
+    }
+
+    public decimal Podsumuj()
+    {
+        return 0;
+    }
+
+    public int LiczbaPozycji()
+    {
+        return 0;
+    }
+
+    public void ZmienStan(Status nowy)
+    {
     }
 }

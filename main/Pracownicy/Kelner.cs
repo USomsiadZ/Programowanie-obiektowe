@@ -5,12 +5,20 @@ namespace ZamowieniaApp.Pracownicy;
 
 public class Kelner : Pracownik
 {
-    private int Rewir { get; }
-    private List<Zamowienie> Zamowienia { get; }
+    private int rewir;
+    private List<Zamowienie> zamowienia;
+
+    public int readId => id;
+    public string readImie => imie;
+    public decimal readPensja => pensja;
+    public int readRewir => rewir;
+    public List<Zamowienie> readZamowienia => zamowienia;
 
     public Kelner(int id, string imie, decimal pensja, int rewir)
         : base(id, imie, pensja)
     {
+        this.rewir = rewir;
+        this.zamowienia = new List<Zamowienie>();
     }
 
     public Zamowienie Obsluz(Stolik stolik)
@@ -18,7 +26,7 @@ public class Kelner : Pracownik
         return null!;
     }
 
-    public decimal Inkasuj(Zamowienie zamowienie)
+    public int LiczbaAktywnychZamowien()
     {
         return 0;
     }

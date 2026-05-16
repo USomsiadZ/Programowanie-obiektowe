@@ -4,11 +4,17 @@ namespace ZamowieniaApp.Pracownicy;
 
 public class Kucharz : Pracownik
 {
-    private string Sekcja { get; }
+    private string sekcja;
+
+    public int readId => id;
+    public string readImie => imie;
+    public decimal readPensja => pensja;
+    public string readSekcja => sekcja;
 
     public Kucharz(int id, string imie, decimal pensja, string sekcja)
         : base(id, imie, pensja)
     {
+        this.sekcja = sekcja;
     }
 
     public void Gotuj(Danie danie)
@@ -16,6 +22,11 @@ public class Kucharz : Pracownik
     }
 
     public bool Sprawdz(Danie danie)
+    {
+        return false;
+    }
+
+    public bool MaSkladniki(Danie danie)
     {
         return false;
     }
