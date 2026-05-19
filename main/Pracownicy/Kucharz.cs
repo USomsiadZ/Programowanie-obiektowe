@@ -1,5 +1,3 @@
-using ZamowieniaApp.Produkty;
-
 namespace ZamowieniaApp.Pracownicy;
 
 public class Kucharz : Pracownik
@@ -17,16 +15,16 @@ public class Kucharz : Pracownik
         this.sekcja = sekcja;
     }
 
-    public void Gotuj(Danie danie)
+    public void Gotuj()
     {
     }
 
-    public bool Sprawdz(Danie danie)
+    public bool Sprawdz()
     {
         return false;
     }
 
-    public bool MaSkladniki(Danie danie)
+    public bool MaSkladniki()
     {
         return false;
     }

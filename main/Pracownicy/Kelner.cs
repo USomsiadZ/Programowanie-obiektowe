@@ -1,4 +1,3 @@
-using ZamowieniaApp.Sala;
 using ZamowieniaApp.Zamowienia;
 
 namespace ZamowieniaApp.Pracownicy;
@@ -21,7 +20,7 @@ public class Kelner : Pracownik
         this.zamowienia = new List<Zamowienie>();
     }
 
-    public Zamowienie Obsluz(Stolik stolik)
+    public Zamowienie Obsluz()
     {
         return null!;
     }
