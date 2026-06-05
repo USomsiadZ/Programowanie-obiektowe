@@ -19,12 +19,12 @@ public class Danie : Produkt
         this.skladniki = new List<Skladnik>();
         this.gotowe = false;
     }
-    
+
 
     public void Przygotuj()
     {
         foreach (var skladnik in skladniki)
-            skladniki.Zuzyj(1);
+            skladnik.Zuzyj(1);
         gotowe = true;
     }
 

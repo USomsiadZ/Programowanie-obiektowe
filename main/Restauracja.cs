@@ -52,14 +52,14 @@ public class Restauracja
     {
         if (pracownik == null)
         {
-            throw new ArgumentNullException(nameof(pracownik));   
+            throw new ArgumentNullException(nameof(pracownik));
         }
         if (!pracownicy.Contains(pracownik))
         {
             pracownicy.Add(pracownik);
             Console.WriteLine($"Pomyslnie zatrudniono {pracownik}");
         }
-        
+
     }
 
     public void Zwolnij(Pracownik pracownik)
@@ -80,5 +80,14 @@ public class Restauracja
     public Stolik? ZnajdzWolnyStolik(int miejsca)
     {
         return null;
+    }
+
+    public static void Main(string[] args)
+    {
+        var restauracja = new Restauracja("U Huberta");
+        restauracja.Otworz();
+        restauracja.Zatrudnij(new Kelner(1, "Jan", 3000m, 1));
+        restauracja.DodajStolik(new Stolik(1, 4));
+        restauracja.Zamknij();
     }
 }
