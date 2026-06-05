@@ -19,18 +19,22 @@ public class Stolik
 
     public void Rezerwuj()
     {
+        status = StatusStolika.Rezerwacja;
     }
 
     public void Zwolnij()
     {
+        status = StatusStolika.Wolny;
     }
 
     public void OznaczJakoBrudny()
     {
+        status = StatusStolika.Brudny;
     }
 
     public void Posprzataj()
     {
+        status = StatusStolika.Wolny;
     }
 
     public bool CzyWolny()

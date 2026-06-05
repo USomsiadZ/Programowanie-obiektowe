@@ -24,22 +24,57 @@ public class Restauracja
 
     public void Otworz()
     {
+        if (czyOtwarta)
+        {
+            Console.WriteLine("Błąd: Restauracja jest już otwarta!"); // zmienic na blad
+        }
+        else
+        {
+            czyOtwarta = true;
+            Console.WriteLine("Restauracja została otwarta!");
+        }
     }
 
     public void Zamknij()
     {
+        if (czyOtwarta)
+        {
+            czyOtwarta = false;
+            Console.WriteLine("Restauracja została zamknięta."); // zmienic na blad
+        }
+        else
+        {
+            Console.WriteLine("Restauracja jest już zamknięta!");
+        }
     }
 
     public void Zatrudnij(Pracownik pracownik)
     {
+        if (pracownik == null)
+        {
+            throw new ArgumentNullException(nameof(pracownik));   
+        }
+        if (!pracownicy.Contains(pracownik))
+        {
+            pracownicy.Add(pracownik);
+            Console.WriteLine($"Pomyslnie zatrudniono {pracownik}");
+        }
+        
     }
 
     public void Zwolnij(Pracownik pracownik)
     {
+        if (pracownik == null) throw new ArgumentNullException(nameof(pracownik));
+        pracownicy.Remove(pracownik);
     }
 
     public void DodajStolik(Stolik stolik)
     {
+        if (stolik == null) throw new ArgumentNullException(nameof(stolik));
+        if (!stoliki.Contains(stolik))
+        {
+            stoliki.Add(stolik);
+        }
     }
 
     public Stolik? ZnajdzWolnyStolik(int miejsca)

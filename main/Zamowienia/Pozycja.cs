@@ -21,10 +21,11 @@ public class Pozycja
 
     public decimal Sumuj()
     {
-        return 0;
+        return ilosc * cena;
     }
 
     public void Rabatuj()
     {
+        
     }
 }

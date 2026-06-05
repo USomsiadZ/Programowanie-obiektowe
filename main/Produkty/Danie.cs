@@ -17,14 +17,19 @@ public class Danie : Produkt
     {
         this.czas = czas;
         this.skladniki = new List<Skladnik>();
+        this.gotowe = false;
     }
+    
 
     public void Przygotuj()
     {
+        foreach (var skladnik in skladniki)
+            skladniki.Zuzyj(1);
+        gotowe = true;
     }
 
     public override decimal Cena()
     {
-        return 0;
+        return bazowa;
     }
 }

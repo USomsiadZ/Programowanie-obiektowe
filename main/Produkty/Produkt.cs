@@ -11,5 +11,5 @@ public abstract class Produkt
         this.bazowa = bazowa;
     }
 
-    protected abstract decimal Cena();
+    public abstract decimal Cena(); // czy tu powinno byc protected?
 }

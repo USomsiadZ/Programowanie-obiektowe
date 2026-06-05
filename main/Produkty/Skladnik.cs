@@ -19,9 +19,15 @@ public class Skladnik
 
     public void Zuzyj(decimal ile)
     {
+        if (ile > ilosc)
+            throw new InvalidOperationException($"Za mało {nazwa}: mamy {ilosc} {miara}, potrzeba {ile}");
+        ilosc -= ile;
     }
 
     public void Uzupelnij(decimal ile)
     {
+        if (ile <= 0)
+            throw new ArgumentException("Ilość uzupełnienia musi być większa od zera");
+        ilosc += ile;
     }
 }

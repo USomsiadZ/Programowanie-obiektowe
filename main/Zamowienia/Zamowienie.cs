@@ -30,36 +30,50 @@ public class Zamowienie
         this.kelner = kelner;
         this.pozycje = new List<Pozycja>();
         this.stan = Status.Nowe;
+		this.suma = 0;
     }
 
     public void Dodaj(Pozycja pozycja)
     {
+		pozycje.Add(pozycja);
+		suma = Podsumuj();
     }
 
     public void Usun(Pozycja pozycja)
     {
+		pozycje.Remove(pozycja);
+        suma = Podsumuj();
     }
 
     public void Zatwierdz()
     {
+		stan = Status.Przygotowanie;
     }
 
     public decimal Oplac(Rabat rabat)
     {
-        return 0;
+		var podsumowanie = Podsumuj();
+		suma = rabat.Oblicz(podsumowanie);
+		stan = Status.Zakonczone;
+		return suma;
     }
 
     public decimal Podsumuj()
     {
-        return 0;
+		decimal kwota = 0;
+		foreach (var pozycja in pozycje) {
+		kwota += pozycja.Sumuj();
+		}
+        return kwota;
     }
 
     public int LiczbaPozycji()
     {
-        return 0;
+        return pozycje.Count;
     }
 
     public void ZmienStan(Status nowy)
     {
+		stan = nowy;  
     }
 }

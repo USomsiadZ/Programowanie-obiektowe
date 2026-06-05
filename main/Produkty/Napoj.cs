@@ -14,14 +14,22 @@ public class Napoj : Produkt
         : base(nazwa, bazowa)
     {
         this.litraz = litraz;
+        this.schlodzony = false;
     }
 
     public void Schlodz()
     {
+        if (schlodzony)
+        {
+            Console.WriteLine("Napój jest już schłodzony.");
+            return;
+        }
+        schlodzony = true;
+        Console.WriteLine("Napój został schłodzony.");
     }
 
     public override decimal Cena()
     {
-        return 0;
+        return bazowa;
     }
 }
