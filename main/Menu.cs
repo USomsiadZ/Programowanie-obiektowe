@@ -47,6 +47,10 @@ public class Menu
             Console.WriteLine("4. Pokaż zamówienie");
             Console.WriteLine("5. Opłać zamówienie");
             Console.WriteLine("6. Aktywne zamówienia kelnera");
+            Console.WriteLine("7. Zarządzaj stolikiem");
+            Console.WriteLine("8. Zwolnij pracownika");
+            Console.WriteLine("9. Zmień stan zamówienia");
+            Console.WriteLine("10. Usuń pozycję z zamówienia");
             Console.WriteLine("0. Wyjście");
             Console.Write("Wybór: ");
 
@@ -64,6 +68,10 @@ public class Menu
                 case "4": PokazZamowienie(); break;
                 case "5": Oplac(); break;
                 case "6": Console.WriteLine($"Aktywne zamówienia: {kelner.LiczbaAktywnychZamowien()}"); break;
+                case "7": ZarzadzajStolikiem(); break;
+                case "8": ZwolnijPracownika(); break;
+                case "9": ZmienStan(); break;
+                case "10": UsunPozycje(); break;
                 case "0": dziala = false; break;
                 default: Console.WriteLine("Nieznana opcja."); break;
             }
@@ -167,5 +175,112 @@ public class Menu
 
         Console.WriteLine($"Do zapłaty: {zamowienie.Oplac(rabat)} zł");
         zamowienie = null;
+    }
+
+    private void ZarzadzajStolikiem()
+    {
+        var stoliki = restauracja.readStoliki;
+        for (int i = 0; i < stoliki.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. Stolik {stoliki[i].readNumer} - {stoliki[i].readStatus}");
+        }
+
+        Console.Write("Numer z listy: ");
+        if (!int.TryParse(Console.ReadLine(), out int nr) || nr < 1 || nr > stoliki.Count)
+        {
+            Console.WriteLine("Zły numer.");
+            return;
+        }
+        var stolik = stoliki[nr - 1];
+
+        Console.WriteLine("Akcja: 1. Rezerwuj  2. Zwolnij  3. Oznacz jako brudny  4. Posprzątaj");
+        Console.Write("Wybór: ");
+        string akcja = Console.ReadLine() ?? "";
+        switch (akcja)
+        {
+            case "1": stolik.Rezerwuj(); break;
+            case "2": stolik.Zwolnij(); break;
+            case "3": stolik.OznaczJakoBrudny(); break;
+            case "4": stolik.Posprzataj(); break;
+            default: Console.WriteLine("Nieznana akcja."); return;
+        }
+        Console.WriteLine($"Stolik {stolik.readNumer} → {stolik.readStatus}");
+    }
+
+    private void ZwolnijPracownika()
+    {
+        var pracownicy = restauracja.readPracownicy;
+        for (int i = 0; i < pracownicy.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {pracownicy[i]}");
+        }
+
+        Console.Write("Numer z listy: ");
+        try
+        {
+            int nr = int.Parse(Console.ReadLine()!);
+            var pracownik = pracownicy[nr - 1];
+            restauracja.Zwolnij(pracownik);
+            Console.WriteLine($"Zwolniono: {pracownik}");
+        }
+        catch
+        {
+            Console.WriteLine("Błędne dane.");
+        }
+    }
+
+    private void ZmienStan()
+    {
+        if (zamowienie == null)
+        {
+            Console.WriteLine("Brak zamówienia.");
+            return;
+        }
+
+        Console.WriteLine("Stan: 1. Nowe  2. Przygotowanie  3. Gotowe  4. Zakończone");
+        Console.Write("Wybór: ");
+        string wybor = Console.ReadLine() ?? "";
+        switch (wybor)
+        {
+            case "1": zamowienie.ZmienStan(Status.Nowe); break;
+            case "2": zamowienie.ZmienStan(Status.Przygotowanie); break;
+            case "3": zamowienie.ZmienStan(Status.Gotowe); break;
+            case "4": zamowienie.ZmienStan(Status.Zakonczone); break;
+            default: Console.WriteLine("Nieznany stan."); return;
+        }
+        Console.WriteLine($"Stan zamówienia: {zamowienie.readStan}");
+    }
+
+    private void UsunPozycje()
+    {
+        if (zamowienie == null)
+        {
+            Console.WriteLine("Brak zamówienia.");
+            return;
+        }
+
+        var pozycje = zamowienie.readPozycje;
+        if (pozycje.Count == 0)
+        {
+            Console.WriteLine("Zamówienie jest puste.");
+            return;
+        }
+
+        for (int i = 0; i < pozycje.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {pozycje[i].readProdukt} x{pozycje[i].readIlosc}");
+        }
+
+        Console.Write("Numer z listy: ");
+        try
+        {
+            int nr = int.Parse(Console.ReadLine()!);
+            zamowienie.Usun(pozycje[nr - 1]);
+            Console.WriteLine("Usunięto pozycję.");
+        }
+        catch
+        {
+            Console.WriteLine("Błędne dane.");
+        }
     }
 }

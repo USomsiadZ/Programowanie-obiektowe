@@ -14,4 +14,9 @@ public abstract class Pracownik
     }
 
     protected abstract void Pracuj();
+
+    public override string ToString()
+    {
+        return imie;
+    }
 }

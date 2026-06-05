@@ -24,9 +24,4 @@ public class Pozycja
     {
         return ilosc * cena;
     }
-
-    public void Rabatuj(Rabat rabat)
-    {
-        cena = rabat.Oblicz(cena);
-    }
 }
