@@ -20,14 +20,18 @@ public class Kelner : Pracownik
         this.zamowienia = new List<Zamowienie>();
     }
 
-    public Zamowienie Obsluz()
-    {
-        return null!;
-    }
 
     public int LiczbaAktywnychZamowien()
     {
-        return 0;
+        int liczba = 0;
+        foreach (var zamowienie in zamowienia)
+        {
+            if (zamowienie.readStan != Status.Zakonczone)
+            {
+                liczba++;
+            }
+        }
+        return liczba;
     }
 
     protected override void Pracuj()

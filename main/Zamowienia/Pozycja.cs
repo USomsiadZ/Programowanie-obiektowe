@@ -1,4 +1,5 @@
 using ZamowieniaApp.Produkty;
+using ZamowieniaApp.Rabaty;
 
 namespace ZamowieniaApp.Zamowienia;
 
@@ -24,8 +25,8 @@ public class Pozycja
         return ilosc * cena;
     }
 
-    public void Rabatuj()
+    public void Rabatuj(Rabat rabat)
     {
-        
+        cena = rabat.Oblicz(cena);
     }
 }

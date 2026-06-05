@@ -1,3 +1,5 @@
+using ZamowieniaApp.Produkty;
+
 namespace ZamowieniaApp.Pracownicy;
 
 public class Kucharz : Pracownik
@@ -15,13 +17,15 @@ public class Kucharz : Pracownik
         this.sekcja = sekcja;
     }
 
-    public void Gotuj()
+    public void Gotuj(Danie danie)
     {
+        danie.Przygotuj();
+        Console.WriteLine($"{imie} przygotował {danie.readNazwa}");
     }
 
-    public bool Sprawdz()
+    public bool Sprawdz(Danie danie)
     {
-        return false;
+        return danie.readGotowe;
     }
 
     protected override void Pracuj()
