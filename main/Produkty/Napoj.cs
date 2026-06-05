@@ -2,15 +2,15 @@ namespace ZamowieniaApp.Produkty;
 
 public class Napoj : Produkt
 {
-    private decimal litraz;
+    private double litraz;
     private bool schlodzony;
 
     public string readNazwa => nazwa;
     public decimal readBazowa => bazowa;
-    public decimal readLitraz => litraz;
+    public double readLitraz => litraz;
     public bool readSchlodzony => schlodzony;
 
-    public Napoj(string nazwa, decimal bazowa, decimal litraz)
+    public Napoj(string nazwa, decimal bazowa, double litraz)
         : base(nazwa, bazowa)
     {
         this.litraz = litraz;

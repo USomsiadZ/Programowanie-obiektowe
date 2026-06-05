@@ -97,14 +97,14 @@ public class Restauracja
         var restauracja = new Restauracja("U Łukasz");
         restauracja.Otworz();
 
-        var kelner = new Kelner(1, "Jan", 3000m, 1);
+        var kelner = new Kelner(1, "Jan", 3000, 1);
         restauracja.Zatrudnij(kelner);
 
         var stolik = new Stolik(1, 4);
         restauracja.DodajStolik(stolik);
 
-        var pizza = new Danie("Pizza", 30m, 15);
-        var cola = new Napoj("Cola", 8m, 0.5m);
+        var pizza = new Danie("Pizza", 30, 15);
+        var cola = new Napoj("Cola", 8, 0.5);
         Console.WriteLine($"Oferta: {pizza.readNazwa} ({pizza.readBazowa} zł), {cola.readNazwa} ({cola.readBazowa} zł)");
 
         var wolny = restauracja.ZnajdzWolnyStolik(2);
@@ -116,7 +116,7 @@ public class Restauracja
         zamowienie.Zatwierdz();
         Console.WriteLine($"Stan zamówienia: {zamowienie.readStan}, pozycji: {zamowienie.LiczbaPozycji()}");
 
-        Rabat rabat = new ProcentowyRabat(10m);
+        Rabat rabat = new ZestawRabat(2, 15, zamowienie.LiczbaPozycji());
         Console.WriteLine($"Do zapłaty: {zamowienie.Oplac(rabat)} zł");
         Console.WriteLine($"Stan zamówienia: {zamowienie.readStan}");
 
