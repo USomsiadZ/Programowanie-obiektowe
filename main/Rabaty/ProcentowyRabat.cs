@@ -13,6 +13,6 @@ public class ProcentowyRabat : Rabat
 
     public decimal Oblicz(decimal suma)
     {
-        return 0;
+        return suma * (1 - procent / 100);
     }
 }

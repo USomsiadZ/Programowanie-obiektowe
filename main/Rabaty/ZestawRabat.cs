@@ -16,6 +16,6 @@ public class ZestawRabat : Rabat
 
     public decimal Oblicz(decimal suma)
     {
-        return 0;
+        return suma * (1 - procentZnizki / 100);
     }
 }

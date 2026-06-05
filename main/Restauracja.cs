@@ -1,5 +1,8 @@
 using ZamowieniaApp.Pracownicy;
+using ZamowieniaApp.Produkty;
+using ZamowieniaApp.Rabaty;
 using ZamowieniaApp.Sala;
+using ZamowieniaApp.Zamowienia;
 
 namespace ZamowieniaApp;
 
@@ -79,15 +82,44 @@ public class Restauracja
 
     public Stolik? ZnajdzWolnyStolik(int miejsca)
     {
+        foreach (var stolik in stoliki)
+        {
+            if (stolik.CzyWolny() && stolik.readMiejsca >= miejsca)
+            {
+                return stolik;
+            }
+        }
         return null;
     }
 
     public static void Main(string[] args)
     {
-        var restauracja = new Restauracja("U Huberta");
+        var restauracja = new Restauracja("U Łukasz");
         restauracja.Otworz();
-        restauracja.Zatrudnij(new Kelner(1, "Jan", 3000m, 1));
-        restauracja.DodajStolik(new Stolik(1, 4));
+
+        var kelner = new Kelner(1, "Jan", 3000m, 1);
+        restauracja.Zatrudnij(kelner);
+
+        var stolik = new Stolik(1, 4);
+        restauracja.DodajStolik(stolik);
+
+        var pizza = new Danie("Pizza", 30m, 15);
+        var cola = new Napoj("Cola", 8m, 0.5m);
+        Console.WriteLine($"Oferta: {pizza.readNazwa} ({pizza.readBazowa} zł), {cola.readNazwa} ({cola.readBazowa} zł)");
+
+        var wolny = restauracja.ZnajdzWolnyStolik(2);
+        Console.WriteLine($"Wolny stolik nr: {wolny?.readNumer}");
+
+        var zamowienie = new Zamowienie(1, stolik, kelner);
+        zamowienie.Dodaj(new Pozycja(pizza, 2));
+        zamowienie.Dodaj(new Pozycja(cola, 3));
+        zamowienie.Zatwierdz();
+        Console.WriteLine($"Stan zamówienia: {zamowienie.readStan}, pozycji: {zamowienie.LiczbaPozycji()}");
+
+        Rabat rabat = new ProcentowyRabat(10m);
+        Console.WriteLine($"Do zapłaty: {zamowienie.Oplac(rabat)} zł");
+        Console.WriteLine($"Stan zamówienia: {zamowienie.readStan}");
+
         restauracja.Zamknij();
     }
 }

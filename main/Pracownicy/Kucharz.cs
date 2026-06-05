@@ -31,5 +31,6 @@ public class Kucharz : Pracownik
 
     protected override void Pracuj()
     {
+        Console.WriteLine($"{imie} gotuje w sekcji {sekcja}");
     }
 }

@@ -32,5 +32,6 @@ public class Kelner : Pracownik
 
     protected override void Pracuj()
     {
+        Console.WriteLine($"{imie} obsługuje rewir {rewir}");
     }
 }
