@@ -12,4 +12,9 @@ public abstract class Produkt
     }
 
     public abstract decimal Cena(); // czy tu powinno byc protected?
+
+    public override string ToString()
+    {
+        return nazwa;
+    }
 }
