@@ -28,7 +28,15 @@ public class Menu
         oferta = new List<Produkt>
         {
             new Danie("Pizza", 30, 15),
-            new Napoj("Cola", 8, 0.5)
+            new Danie("Pizza z szynką", 35, 15),
+            new Napoj("Cola", 8, 0.5),
+            new Napoj("Piwo", 10, 0.5),
+            new Napoj("Woda", 5, 0.5),
+            new Napoj("Sok", 12, 0.5),
+            new Napoj("Wino", 20, 0.5),
+            new Napoj("Whisky", 30, 0.5),
+            new Napoj("Rum", 25, 0.5),
+            new Napoj("Gin", 22, 0.5)
         };
     }
 
