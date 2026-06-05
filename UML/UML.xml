@@ -44,9 +44,6 @@
         <mxCell id="9U9c5TqMnNGWsocd_bQW-109" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Napoj&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- litraz: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cena(): decimal&lt;br/&gt;+ schlodz()&lt;/p&gt;" vertex="1">
           <mxGeometry height="100" width="160" x="160" y="800" as="geometry" />
         </mxCell>
-        <mxCell id="9U9c5TqMnNGWsocd_bQW-110" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Skladnik&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- nazwa: string&lt;br/&gt;- miara: string&lt;br/&gt;- ilosc: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ zuzyj()&lt;br/&gt;+ uzupelnij()&lt;/p&gt;" vertex="1">
-          <mxGeometry height="125" width="165" x="530" y="977.5" as="geometry" />
-        </mxCell>
         <mxCell id="9U9c5TqMnNGWsocd_bQW-111" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ProcentowyRabat&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- procent: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ oblicz(suma: decimal): decimal&lt;/p&gt;" vertex="1">
           <mxGeometry height="85" width="220" x="1345" y="468" as="geometry" />
         </mxCell>
@@ -94,9 +91,6 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="9U9c5TqMnNGWsocd_bQW-125" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-109" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-107">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="9U9c5TqMnNGWsocd_bQW-126" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-110" style="endArrow=diamondThin;endFill=1;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-108">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="9U9c5TqMnNGWsocd_bQW-127" edge="1" parent="1" source="9U9c5TqMnNGWsocd_bQW-111" style="endArrow=block;dashed=1;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="9U9c5TqMnNGWsocd_bQW-104">

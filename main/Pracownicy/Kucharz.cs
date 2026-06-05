@@ -24,11 +24,6 @@ public class Kucharz : Pracownik
         return false;
     }
 
-    public bool MaSkladniki()
-    {
-        return false;
-    }
-
     protected override void Pracuj()
     {
         Console.WriteLine($"{imie} gotuje w sekcji {sekcja}");
