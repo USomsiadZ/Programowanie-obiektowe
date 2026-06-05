@@ -1,0 +1,3 @@
+- Usunąć makaron w menu od ostrony użytkownika
+- Usunąć puste i archiwalne funkcję i klasy
+- UML.xml → UML-obraz.png
