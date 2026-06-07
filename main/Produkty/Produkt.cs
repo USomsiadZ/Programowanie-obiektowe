@@ -2,7 +2,8 @@ namespace ZamowieniaApp.Produkty;
 
 public abstract class Produkt
 {
-    protected string nazwa;
+    public virtual string nazwa { get; set; }
+    //protected string nazwa;
     protected decimal bazowa;
 
     protected Produkt(string nazwa, decimal bazowa)

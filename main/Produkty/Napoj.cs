@@ -5,6 +5,8 @@ public class Napoj : Produkt
     private double litraz;
     private bool schlodzony;
 
+    //public override string nazwa { get; set; }
+
     public string readNazwa => nazwa;
     public decimal readBazowa => bazowa;
     public double readLitraz => litraz;
