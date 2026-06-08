@@ -17,6 +17,6 @@ public abstract class Pracownik
 
     public override string ToString()
     {
-        return imie;
+        return $"Imię: {imie}, Stanowisko: {this.GetType().Name}, Pensja: {pensja} zł";
     }
 }

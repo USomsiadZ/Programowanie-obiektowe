@@ -14,6 +14,7 @@ public class Menu
     private List<Produkt> oferta;
     private Zamowienie? zamowienie;
     private int kolejneId = 1;
+    private int kolejneIdPracownika = 1;
 
     public Menu()
     {
@@ -40,6 +41,17 @@ public class Menu
         };
     }
 
+    private void Wyswietl()
+    {
+        Console.WriteLine("\n=== System Zarządzania Restauracją ===");
+        Console.WriteLine("1. Zarządzaj zamówieniem.");
+        Console.WriteLine("2. Zarządzaj stolikiem.");
+        Console.WriteLine("3. Zarządzaj pracownikami.");
+        Console.WriteLine("4. Zarządzaj restauracją.");
+        Console.WriteLine("0. Wyjdź z systemu.");
+        Console.Write("Wybór: ");
+    }
+
     public void Uruchom()
     {
         restauracja.Otworz();
@@ -47,248 +59,355 @@ public class Menu
         bool dziala = true;
         while (dziala)
         {
-            Console.WriteLine();
-            Console.WriteLine("=== MENU ===");
-            Console.WriteLine("1. Pokaż ofertę");
-            Console.WriteLine("2. Nowe zamówienie");
-            Console.WriteLine("3. Dodaj pozycję");
-            Console.WriteLine("4. Pokaż zamówienie");
-            Console.WriteLine("5. Opłać zamówienie");
-            Console.WriteLine("6. Aktywne zamówienia kelnera");
-            Console.WriteLine("7. Zarządzaj stolikiem");
-            Console.WriteLine("8. Zwolnij pracownika");
-            Console.WriteLine("9. Zmień stan zamówienia");
-            Console.WriteLine("10. Usuń pozycję z zamówienia");
-            Console.WriteLine("0. Wyjście");
-            Console.Write("Wybór: ");
+            Wyswietl();
 
-            string? wybor = Console.ReadLine();
-            if (wybor == null)
-            {
-                Console.WriteLine("Nieprawidłowy wybór.");
-                break;
-            }
+            string wybor = Console.ReadLine();
             switch (wybor)
             {
-                case "1": PokazOferte(); break;
-                case "2": NoweZamowienie(); break;
-                case "3": DodajPozycje(); break;
-                case "4": PokazZamowienie(); break;
-                case "5": Oplac(); break;
-                case "6": Console.WriteLine($"Aktywne zamówienia: {kelner.LiczbaAktywnychZamowien()}"); break;
-                case "7": ZarzadzajStolikiem(); break;
-                case "8": ZwolnijPracownika(); break;
-                case "9": ZmienStan(); break;
-                case "10": UsunPozycje(); break;
-                case "0": dziala = false; break;
-                default: Console.WriteLine("Nieznana opcja."); break;
+                case "1":
+                    Console.WriteLine("Wybrano zarządzanie zamówieniem...");
+                    break;
+                case "2":
+                    ZarzadzajStolikiem();
+                    break;
+                case "3":
+                    PracownikMenu();
+                    break;
+                case "4":
+                    ZarzadzajRestauracja();
+                    break;
+                case "0":
+                    dziala = false;
+                    Console.WriteLine("Zamykanie systemu...");
+                    break;
+                default:
+                    Console.WriteLine("Niepoprawny wybór. Spróbuj ponownie.");
+                    break;
             }
         }
-
         restauracja.Zamknij();
     }
 
-    private void PokazOferte()
+    // Zarządzanie pracownikami
+
+    public void PracownikMenu()
     {
-        for (int i = 0; i < oferta.Count; i++)
+        bool dziala = true;
+        while (dziala)
         {
-            var produkt = oferta[i];
-            Console.WriteLine($"{i + 1}. {produkt} - {produkt.Cena()} zł");
+            Console.WriteLine("=== Zarządzanie pracownikami ===");
+            Console.WriteLine("1. Sprawdz listę pracowników.");
+            Console.WriteLine("2. Dodaj nowego pracownika.");
+            Console.WriteLine("3. Zwolnij pracownika.");
+            Console.WriteLine("0. Powrót.");
+
+            string wybor = Console.ReadLine();
+            switch (wybor)
+            {
+                case "1":
+                    PokazPracownikow();
+                    break;
+                case "2":
+                    DodajPracownika();
+                    break;
+                case "3":
+                    ZwolnijPracownika();
+                    break;
+                case "0":
+                    dziala = false;
+                    break;
+                default:
+                    Console.WriteLine("Niepoprawny wybór. Spróbuj ponownie.");
+                    break;
+            }
         }
     }
 
-    private void NoweZamowienie()
+    private void PokazPracownikow()
     {
-        var stolik = restauracja.ZnajdzWolnyStolik(2);
-        if (stolik == null)
+        var pracownicy = restauracja.readPracownicy;
+        if (pracownicy.Count == 0)
         {
-            Console.WriteLine("Brak wolnych stolików.");
+            Console.WriteLine("Brak pracowników.");
             return;
         }
-
-        zamowienie = new Zamowienie(kolejneId, stolik, kelner);
-        kolejneId++;
-        kelner.readZamowienia.Add(zamowienie);
-        Console.WriteLine($"Utworzono zamówienie nr {zamowienie.readId}");
+        Console.WriteLine("Aktualna lista pracowników:");
+        for (int i = 0; i < pracownicy.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {pracownicy[i]}");
+        }
     }
 
-    private void DodajPozycje()
+    private void DodajPracownika()
     {
-        if (zamowienie == null)
+        Console.WriteLine("Typ pracownika: 1. Kelner  2. Kucharz");
+        Console.Write("Wybór: ");
+        string typ = Console.ReadLine() ?? "";
+
+        if (typ != "1" && typ != "2")
         {
-            Console.WriteLine("Najpierw utwórz zamówienie (opcja 2).");
+            Console.WriteLine("Niepoprawny wybór.");
             return;
         }
 
-        PokazOferte();
         try
         {
-            Console.Write("Numer produktu: ");
-            int nr = int.Parse(Console.ReadLine()!);
+            int noweId = kolejneIdPracownika++;
 
-            Console.Write("Ilość: ");
-            int ilosc = int.Parse(Console.ReadLine()!);
+            Console.Write("Podaj imię pracownika: ");
+            string imie = Console.ReadLine()!;
 
-            var produkt = oferta[nr - 1];
-            zamowienie.Dodaj(new Pozycja(produkt, ilosc));
-            Console.WriteLine($"Dodano {ilosc} x {produkt}");
+            Console.Write("Podaj pensja pracownika: ");
+            decimal pensja = decimal.Parse(Console.ReadLine()!);
+
+            if (typ == "1")
+            {
+                Console.Write("Podaj numer rewiru: ");
+                int rewir = int.Parse(Console.ReadLine()!);
+                restauracja.Zatrudnij(new Kelner(noweId, imie, pensja, rewir));
+            }
+            else
+            {
+                Console.Write("Podaj sekcje pracy kucharza: ");
+                string sekcja = Console.ReadLine()!;
+                restauracja.Zatrudnij(new Kucharz(noweId, imie, pensja, sekcja));
+            }
         }
         catch
         {
             Console.WriteLine("Błędne dane.");
         }
-    }
-
-    private void PokazZamowienie()
-    {
-        if (zamowienie == null)
-        {
-            Console.WriteLine("Brak zamówienia.");
-            return;
-        }
-
-        foreach (var pozycja in zamowienie.readPozycje)
-        {
-            Console.WriteLine($"{pozycja.readProdukt} x{pozycja.readIlosc} = {pozycja.Sumuj()} zł");
-        }
-        Console.WriteLine($"Suma: {zamowienie.Podsumuj()} zł, stan: {zamowienie.readStan}");
-    }
-
-    private void Oplac()
-    {
-        if (zamowienie == null)
-        {
-            Console.WriteLine("Brak zamówienia.");
-            return;
-        }
-
-        zamowienie.Zatwierdz();
-        Console.WriteLine("Rabat: 1. Procentowy (10%)  2. Zestaw (15% od 3 pozycji)  3. Bez rabatu");
-        Console.Write("Wybór: ");
-        string wybor = Console.ReadLine() ?? "";
-
-        Rabat rabat;
-        if (wybor == "1")
-        {
-            rabat = new ProcentowyRabat(10);
-        }
-        else if (wybor == "2")
-        {
-            rabat = new ZestawRabat(3, 15, zamowienie.LiczbaPozycji());
-        }
-        else
-        {
-            rabat = new ProcentowyRabat(0);
-        }
-
-        Console.WriteLine($"Do zapłaty: {zamowienie.Oplac(rabat)} zł");
-        zamowienie = null;
-    }
-
-    private void ZarzadzajStolikiem()
-    {
-        var stoliki = restauracja.readStoliki;
-        for (int i = 0; i < stoliki.Count; i++)
-        {
-            Console.WriteLine($"{i + 1}. Stolik {stoliki[i].readNumer} - {stoliki[i].readStatus}");
-        }
-
-        Console.Write("Numer z listy: ");
-        if (!int.TryParse(Console.ReadLine(), out int nr) || nr < 1 || nr > stoliki.Count)
-        {
-            Console.WriteLine("Zły numer.");
-            return;
-        }
-        var stolik = stoliki[nr - 1];
-
-        Console.WriteLine("Akcja: 1. Rezerwuj  2. Zwolnij  3. Oznacz jako brudny  4. Posprzątaj");
-        Console.Write("Wybór: ");
-        string akcja = Console.ReadLine() ?? "";
-        switch (akcja)
-        {
-            case "1": stolik.Rezerwuj(); break;
-            case "2": stolik.Zwolnij(); break;
-            case "3": stolik.OznaczJakoBrudny(); break;
-            case "4": stolik.Posprzataj(); break;
-            default: Console.WriteLine("Nieznana akcja."); return;
-        }
-        Console.WriteLine($"Stolik {stolik.readNumer} → {stolik.readStatus}");
     }
 
     private void ZwolnijPracownika()
     {
         var pracownicy = restauracja.readPracownicy;
-        for (int i = 0; i < pracownicy.Count; i++)
-        {
-            Console.WriteLine($"{i + 1}. {pracownicy[i]}");
-        }
-
-        Console.Write("Numer z listy: ");
+        Console.WriteLine("Podaj ID pracownika którego chcesz zwolnić: ");
+        PokazPracownikow();
         try
         {
             int nr = int.Parse(Console.ReadLine()!);
             var pracownik = pracownicy[nr - 1];
             restauracja.Zwolnij(pracownik);
-            Console.WriteLine($"Zwolniono: {pracownik}");
+            Console.WriteLine($"Pomyślnie zwolniono pracownika: {pracownik}");
         }
         catch
         {
-            Console.WriteLine("Błędne dane.");
+            Console.WriteLine("Niepoprawne ID pracownika.");
         }
     }
 
-    private void ZmienStan()
+    // Zarządzanie stolikiem
+
+    private void ZarzadzajStolikiem()
     {
-        if (zamowienie == null)
+        var stoliki = restauracja.readStoliki;
+        bool wybierzStolik = true;
+        
+        while (wybierzStolik)
         {
-            Console.WriteLine("Brak zamówienia.");
+            Console.WriteLine("\n=== Zarządzanie stolikiem ===");
+            for (int i = 0; i < stoliki.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. Stolik {stoliki[i].readNumer} - {stoliki[i].readStatus}");
+            }
+            Console.WriteLine("0. Powrót.");
+            Console.Write("Wybierz numer stolika: ");
+
+            string wejscie = Console.ReadLine() ?? "";
+            if (wejscie == "0")
+            {
+                wybierzStolik = false;
+                continue;
+            }
+
+            if (!int.TryParse(wejscie, out int nr) || nr < 1 || nr > stoliki.Count)
+            {
+                Console.WriteLine("Niepoprawny numer stolika.");
+                continue;
+            }
+
+            var stolik = stoliki[nr - 1];
+            bool akcjaStolik = true;
+            
+            while (akcjaStolik)
+            {
+                Console.WriteLine($"\nStolik nr {stolik.readNumer} - Aktualny status: {stolik.readStatus}");
+                Console.WriteLine("Wybierz akcję:");
+                Console.WriteLine("1. Rezerwuj.");
+                Console.WriteLine("2. Zwolnij.");
+                Console.WriteLine("3. Oznacz jako brudny.");
+                Console.WriteLine("4. Posprzątaj.");
+                Console.WriteLine("0. Powrót do wyboru stolika.");
+                Console.Write("Wybór: ");
+
+                string akcja = Console.ReadLine() ?? "";
+                switch (akcja)
+                {
+                    case "1":
+                        stolik.Rezerwuj();
+                        Console.WriteLine($"Pomyślnie zarezerwowano stolik nr {stolik.readNumer}.");
+                        wybierzStolik = false;
+                        akcjaStolik = false;
+                        return;
+                    case "2":
+                        stolik.Zwolnij();
+                        Console.WriteLine($"Pomyślnie zwolniono stolik nr {stolik.readNumer}.");
+                        wybierzStolik = false;
+                        akcjaStolik = false;
+                        return;
+                    case "3":
+                        stolik.OznaczJakoBrudny();
+                        Console.WriteLine($"Pomyślnie oznaczono stolik nr {stolik.readNumer} jako brudny.");
+                        wybierzStolik = false;
+                        akcjaStolik = false;
+                        return;
+                    case "4":
+                        stolik.Posprzataj();
+                        Console.WriteLine($"Stolik nr {stolik.readNumer} został posprzątany.");
+                        wybierzStolik = false;
+                        akcjaStolik = false;
+                        return;
+                    case "0":
+                        akcjaStolik = false;
+                        break;
+                    default:
+                        Console.WriteLine("Niepoprawna opcja.");
+                        break;
+                }
+            }
+        }
+    }
+    
+    // Zarządzanie restauracja
+
+    private void ZarzadzajRestauracja()
+    {
+        bool dziala = true;
+        while (dziala)
+        {
+            Console.WriteLine("=== Zarządzanie restauracją ===");
+            Console.WriteLine("1. Otwórz restauracje.");
+            Console.WriteLine("2. Zamknij restauracje.");
+            Console.WriteLine("3. Wyświetl aktualne menu.");
+            Console.WriteLine("4. Dodaj nową pozycje do menu.");
+            Console.WriteLine("5. Usun pozycję z menu.");
+            Console.WriteLine("0. Powrót do menu.");
+            Console.Write("Wybierz opcje: ");
+
+            string wybor = Console.ReadLine();
+            switch (wybor)
+            {
+                case "1":
+                    restauracja.Otworz();
+                    break;
+                case "2":
+                    restauracja.Zamknij();
+                    break;
+                case "3":
+                    PokazOferte();
+                    break;
+                case "4":
+                    DodajPozycje();
+                    break;
+                case "5":
+                    break;
+                case "0":
+                    dziala = false;
+                    break;
+            }
+        }
+    }
+    
+    private void PokazOferte()
+    {
+        Console.WriteLine("Menu: ");
+        if (oferta.Count == 0)
+        {
+            Console.WriteLine("Brak pozycji w menu.");
             return;
         }
 
-        Console.WriteLine("Stan: 1. Nowe  2. Przygotowanie  3. Gotowe  4. Zakończone");
+        for (int i = 0; i < oferta.Count; i++)
+        {
+            var produkt = oferta[i];
+            Console.WriteLine($"{i + 1}. {produkt} | Cena: {produkt.Cena()} zł");
+        }
+    }
+
+    private void DodajPozycje()
+    {
+        Console.WriteLine("Jaką pozycję chcesz dodać?");
+        Console.WriteLine("1. Danie");
+        Console.WriteLine("2. Napój");
         Console.Write("Wybór: ");
-        string wybor = Console.ReadLine() ?? "";
-        switch (wybor)
+        
+        string typ = Console.ReadLine() ?? "";
+        if (typ != "1" && typ != "2")
         {
-            case "1": zamowienie.ZmienStan(Status.Nowe); break;
-            case "2": zamowienie.ZmienStan(Status.Przygotowanie); break;
-            case "3": zamowienie.ZmienStan(Status.Gotowe); break;
-            case "4": zamowienie.ZmienStan(Status.Zakonczone); break;
-            default: Console.WriteLine("Nieznany stan."); return;
-        }
-        Console.WriteLine($"Stan zamówienia: {zamowienie.readStan}");
-    }
-
-    private void UsunPozycje()
-    {
-        if (zamowienie == null)
-        {
-            Console.WriteLine("Brak zamówienia.");
+            Console.WriteLine("Nieznany typ. Anulowano dodawanie.");
             return;
         }
-
-        var pozycje = zamowienie.readPozycje;
-        if (pozycje.Count == 0)
-        {
-            Console.WriteLine("Zamówienie jest puste.");
-            return;
-        }
-
-        for (int i = 0; i < pozycje.Count; i++)
-        {
-            Console.WriteLine($"{i + 1}. {pozycje[i].readProdukt} x{pozycje[i].readIlosc}");
-        }
-
-        Console.Write("Numer z listy: ");
+        
         try
         {
-            int nr = int.Parse(Console.ReadLine()!);
-            zamowienie.Usun(pozycje[nr - 1]);
-            Console.WriteLine("Usunięto pozycję.");
+            Console.Write("Podaj nazwę: ");
+            string nazwa = Console.ReadLine() ?? "Brak nazwy";
+
+            Console.Write("Podaj cenę bazową: ");
+            decimal cena = decimal.Parse(Console.ReadLine()!);
+
+            if (typ == "1")
+            {
+                Console.Write("Podaj czas przygotowania (w minutach): ");
+                int czas = int.Parse(Console.ReadLine()!);
+                oferta.Add(new Danie(nazwa, cena, czas));
+            }
+            else
+            {
+                Console.Write("Podaj pojemność napoju w litrach: ");
+                double litraz = double.Parse(Console.ReadLine()!);
+                oferta.Add(new Napoj(nazwa, cena, litraz));
+            }
+
+            Console.WriteLine($"Pomyślnie dodano '{nazwa}' do menu.");
         }
-        catch
+        catch (FormatException)
         {
-            Console.WriteLine("Błędne dane.");
+            Console.WriteLine("Błąd: Niepoprawne dane.");
         }
     }
+    
+    private void UsunPozycje()
+    {
+        if (oferta.Count == 0)
+        {
+            Console.WriteLine("\nMenu jest puste.");
+            return;
+        }
+        
+        PokazOferte();
+        Console.WriteLine("Podaj numer pozycji do usunięcia: ");
+        string numerPozycji = Console.ReadLine() ?? "";
+
+        if (int.TryParse(numerPozycji, out int numer) && numer > 0 && numer <= oferta.Count)
+        {
+            var usuwanyProdukt = oferta[numer - 1]; 
+            oferta.RemoveAt(numer - 1);
+            Console.WriteLine($"Pomyślnie usunięto produkt: {usuwanyProdukt}");
+        }
+        else
+        {
+            Console.WriteLine("Niepoprawny numer produktu.");
+        }
+    }
+    
+    // Zarządzanie zamówieniem
+
+    private void ZarzadzajZamowieniem()
+    {
+        
+    }
+    
+    
 }
