@@ -96,5 +96,6 @@ public class Restauracja
     {
         var menu = new Menu();
         menu.Uruchom();
+        return;
     }
 }
