@@ -24,4 +24,9 @@ public class Pozycja
     {
         return ilosc * cena;
     }
+    
+    public void ZmniejszIlosc(int oIle)
+    {
+        ilosc -= oIle;
+    }
 }

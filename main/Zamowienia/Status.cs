@@ -5,5 +5,6 @@ public enum Status
     Nowe,
     Przygotowanie,
     Gotowe,
+    Podano,
     Zakonczone
 }

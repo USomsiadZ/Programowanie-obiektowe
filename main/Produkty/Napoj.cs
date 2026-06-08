@@ -2,17 +2,17 @@ namespace ZamowieniaApp.Produkty;
 
 public class Napoj : Produkt
 {
-    private double litraz;
+    private decimal litraz;
     private bool schlodzony;
 
     //public override string nazwa { get; set; }
 
     public string readNazwa => nazwa;
     public decimal readBazowa => bazowa;
-    public double readLitraz => litraz;
+    public decimal readLitraz => litraz;
     public bool readSchlodzony => schlodzony;
 
-    public Napoj(string nazwa, decimal bazowa, double litraz)
+    public Napoj(string nazwa, decimal bazowa, decimal litraz)
         : base(nazwa, bazowa)
     {
         this.litraz = litraz;

@@ -76,4 +76,9 @@ public class Zamowienie
     {
 		stan = nowy;  
     }
+    
+    public void AktualizujSume()
+    {
+	    suma = Podsumuj();
+    }
 }
