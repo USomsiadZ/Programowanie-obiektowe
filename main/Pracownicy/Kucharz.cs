@@ -5,10 +5,6 @@ namespace ZamowieniaApp.Pracownicy;
 public class Kucharz : Pracownik
 {
     private string sekcja;
-
-    public int readId => id;
-    public string readImie => imie;
-    public decimal readPensja => pensja;
     public string readSekcja => sekcja;
 
     public Kucharz(int id, string imie, decimal pensja, string sekcja)
@@ -28,7 +24,7 @@ public class Kucharz : Pracownik
         return danie.readGotowe;
     }
 
-    protected override void Pracuj()
+    public override void Pracuj()
     {
         Console.WriteLine($"{imie} gotuje w sekcji {sekcja}");
     }

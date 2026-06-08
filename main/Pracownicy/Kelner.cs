@@ -6,10 +6,6 @@ public class Kelner : Pracownik
 {
     private int rewir;
     private List<Zamowienie> zamowienia;
-
-    public int readId => id;
-    public string readImie => imie;
-    public decimal readPensja => pensja;
     public int readRewir => rewir;
     public List<Zamowienie> readZamowienia => zamowienia;
 
@@ -34,7 +30,7 @@ public class Kelner : Pracownik
         return liczba;
     }
 
-    protected override void Pracuj()
+    public override void Pracuj()
     {
         Console.WriteLine($"{imie} obsługuje rewir {rewir}");
     }

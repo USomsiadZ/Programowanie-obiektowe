@@ -12,7 +12,7 @@ public abstract class Produkt
         this.bazowa = bazowa;
     }
 
-    public abstract decimal Cena(); // czy tu powinno byc protected?
+    public abstract decimal Cena();
 
     public override string ToString()
     {

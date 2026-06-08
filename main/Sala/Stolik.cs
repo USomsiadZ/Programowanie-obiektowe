@@ -27,6 +27,11 @@ public class Stolik
         status = StatusStolika.Wolny;
     }
 
+    public void Zajmij()
+    {
+        status = StatusStolika.Zajety;
+    }
+
     public void OznaczJakoBrudny()
     {
         status = StatusStolika.Brudny;

@@ -5,6 +5,10 @@ public abstract class Pracownik
     protected int id;
     protected string imie;
     protected decimal pensja;
+    
+    public int readId => id;
+    public string readImie => imie;
+    public decimal readPensja => pensja;
 
     protected Pracownik(int id, string imie, decimal pensja)
     {
@@ -13,7 +17,7 @@ public abstract class Pracownik
         this.pensja = pensja;
     }
 
-    protected abstract void Pracuj();
+    public abstract void Pracuj();
 
     public override string ToString()
     {
