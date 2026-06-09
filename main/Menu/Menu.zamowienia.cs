@@ -254,7 +254,7 @@ public partial class Menu
             {
                 wybranyKucharz.Gotuj(danie);
                 if (wybranyKucharz.Sprawdz(danie))
-                    Console.WriteLine($" '{danie.readNazwa}' jest gotowa do wydania.");
+                    Console.WriteLine($"{danie.readNazwa} jest gotowa do wydania.");
             }
         }
 
@@ -294,12 +294,13 @@ public partial class Menu
             return;
         }
 
-        Console.WriteLine($"Zamówienie ID: {zamowienie.readId} | Stan: {zamowienie.readStan}");
-        foreach (var pozycja in zamowienie.readPozycje)
+        Console.WriteLine($"Zamówienie numer: {zamowienie.readId} | Status zamówienia: {zamowienie.readStan}");
+        for (int i = 0; i < zamowienie.readPozycje.Count; i++)
         {
-            Console.WriteLine($"  {pozycja.readProdukt} x{pozycja.readIlosc} = {pozycja.Sumuj()} zł");
+            var pozycja = zamowienie.readPozycje[i];
+            Console.WriteLine($"  {i + 1}. {pozycja.readProdukt} x{pozycja.readIlosc} = {pozycja.Sumuj():F2} zł");
         }
-        Console.WriteLine($"Suma: {zamowienie.Podsumuj()} zł");
+        Console.WriteLine($"Suma: {zamowienie.Podsumuj():F2} zł");
     }
 
     private void OplacZamowienie()
