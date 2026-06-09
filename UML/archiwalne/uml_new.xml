@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Diagram klas - ZamowieniaApp" id="zamowienia-app-current">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="cls_Menu" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Menu&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- restauracja: Restauracja&lt;br/&gt;- oferta: List&amp;lt;Produkt&amp;gt;&lt;br/&gt;- zamowienie: Zamowienie&lt;br/&gt;- kolejneId: int&lt;br/&gt;- kolejneIdPracownika: int&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Menu()&lt;br/&gt;+ Uruchom(): void&lt;/p&gt;">
+          <mxGeometry x="60" y="60" width="230" height="175" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cls_Restauracja" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Restauracja&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- nazwa: string&lt;br/&gt;- czyOtwarta: bool&lt;br/&gt;- pracownicy: List&amp;lt;Pracownik&amp;gt;&lt;br/&gt;- stoliki: List&amp;lt;Stolik&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Restauracja(nazwa)&lt;br/&gt;+ Otworz(): void&lt;br/&gt;+ Zamknij(): void&lt;br/&gt;+ Zatrudnij(p: Pracownik): void&lt;br/&gt;+ Zwolnij(p: Pracownik): void&lt;br/&gt;+ DodajStolik(s: Stolik): void&lt;br/&gt;+ ZnajdzWolnyStolik(miejsca: int): Stolik&lt;/p&gt;">
+          <mxGeometry x="420" y="60" width="250" height="245" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cls_Stolik" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Stolik&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- numer: int&lt;br/&gt;- miejsca: int&lt;br/&gt;- status: StatusStolika&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Stolik(numer, miejsca)&lt;br/&gt;+ Rezerwuj(): void&lt;br/&gt;+ Zwolnij(): void&lt;br/&gt;+ Zajmij(): void&lt;br/&gt;+ OznaczJakoBrudny(): void&lt;br/&gt;+ Posprzataj(): void&lt;br/&gt;+ CzyWolny(): bool&lt;/p&gt;">
+          <mxGeometry x="820" y="60" width="220" height="210" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cls_StatusStolika" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;&amp;laquo;enum&amp;raquo;&lt;br/&gt;StatusStolika&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;Wolny&lt;br/&gt;Zajety&lt;br/&gt;Rezerwacja&lt;br/&gt;Brudny&lt;/p&gt;">
+          <mxGeometry x="1100" y="80" width="170" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cls_Pracownik" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«abstract»&lt;br&gt;&lt;i&gt;Pracownik&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# id: int&lt;br/&gt;# imie: string&lt;br/&gt;# pensja: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Pracownik(id, imie, pensja)&lt;br/&gt;&lt;i&gt;+ Pracuj(): void&lt;/i&gt;&lt;br/&gt;+ ToString(): string&lt;/p&gt;">
+          <mxGeometry x="420" y="380" width="235" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cls_Kelner" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Kelner&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- rewir: int&lt;br/&gt;- zamowienia: List&amp;lt;Zamowienie&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Kelner(id, imie, pensja, rewir)&lt;br/&gt;+ LiczbaAktywnychZamowien(): int&lt;br/&gt;+ Pracuj(): void&lt;/p&gt;">
+          <mxGeometry x="120" y="600" width="230" height="145" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cls_Kucharz" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Kucharz&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- sekcja: string&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Kucharz(id, imie, pensja, sekcja)&lt;br/&gt;+ Gotuj(d: Danie): void&lt;br/&gt;+ Sprawdz(d: Danie): bool&lt;br/&gt;+ Pracuj(): void&lt;/p&gt;">
+          <mxGeometry x="420" y="600" width="235" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cls_Zamowienie" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Zamowienie&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: int&lt;br/&gt;- data: DateTime&lt;br/&gt;- suma: decimal&lt;br/&gt;- stan: Status&lt;br/&gt;- pozycje: List&amp;lt;Pozycja&amp;gt;&lt;br/&gt;- stolik: Stolik&lt;br/&gt;- kelner: Kelner&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Zamowienie(id, stolik, kelner)&lt;br/&gt;+ Dodaj(p: Pozycja): void&lt;br/&gt;+ Usun(p: Pozycja): void&lt;br/&gt;+ Zatwierdz(): void&lt;br/&gt;+ Oplac(r: Rabat): decimal&lt;br/&gt;+ Podsumuj(): decimal&lt;br/&gt;+ LiczbaPozycji(): int&lt;br/&gt;+ ZmienStan(s: Status): void&lt;br/&gt;+ AktualizujSume(): void&lt;/p&gt;">
+          <mxGeometry x="780" y="380" width="250" height="330" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cls_Status" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;&amp;laquo;enum&amp;raquo;&lt;br/&gt;Status&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;Nowe&lt;br/&gt;Przygotowanie&lt;br/&gt;Gotowe&lt;br/&gt;Podano&lt;br/&gt;Zakonczone&lt;/p&gt;">
+          <mxGeometry x="1100" y="520" width="170" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cls_Rabat" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;&amp;laquo;interface&amp;raquo;&lt;br/&gt;Rabat&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Oblicz(suma: decimal): decimal&lt;/p&gt;">
+          <mxGeometry x="1100" y="380" width="220" height="85" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cls_ProcentowyRabat" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ProcentowyRabat&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- procent: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ ProcentowyRabat(procent)&lt;br/&gt;+ Oblicz(suma: decimal): decimal&lt;/p&gt;">
+          <mxGeometry x="1380" y="360" width="240" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cls_ZestawRabat" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ZestawRabat&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- minPozycji: int&lt;br/&gt;- procentZnizki: decimal&lt;br/&gt;- liczbaPozycji: int&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ ZestawRabat(minPozycji, procentZnizki, liczbaPozycji)&lt;br/&gt;+ Oblicz(suma: decimal): decimal&lt;/p&gt;">
+          <mxGeometry x="1380" y="520" width="255" height="145" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cls_Pozycja" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Pozycja&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- ilosc: int&lt;br/&gt;- cena: decimal&lt;br/&gt;- produkt: Produkt&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Pozycja(produkt, ilosc)&lt;br/&gt;+ Sumuj(): decimal&lt;br/&gt;+ ZmniejszIlosc(oIle: int): void&lt;/p&gt;">
+          <mxGeometry x="780" y="780" width="225" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cls_Produkt" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«abstract»&lt;br&gt;&lt;i&gt;Produkt&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# nazwa: string&lt;br/&gt;# bazowa: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Produkt(nazwa, bazowa)&lt;br/&gt;&lt;i&gt;+ Cena(): decimal&lt;/i&gt;&lt;br/&gt;+ ToString(): string&lt;/p&gt;">
+          <mxGeometry x="420" y="1020" width="235" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cls_Danie" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Danie&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- czas: int&lt;br/&gt;- gotowe: bool&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Danie(nazwa, bazowa, czas)&lt;br/&gt;+ Przygotuj(): void&lt;br/&gt;+ Cena(): decimal&lt;/p&gt;">
+          <mxGeometry x="120" y="1240" width="220" height="145" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cls_Napoj" parent="1" vertex="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Napoj&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- litraz: decimal&lt;br/&gt;- schlodzony: bool&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Napoj(nazwa, bazowa, litraz)&lt;br/&gt;+ Schlodz(): void&lt;br/&gt;+ Cena(): decimal&lt;/p&gt;">
+          <mxGeometry x="700" y="1240" width="230" height="145" as="geometry" />
+        </mxCell>
+
+        <!-- Dziedziczenie -->
+        <mxCell id="e_Danie_Produkt" parent="1" edge="1" source="cls_Danie" target="cls_Produkt" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.15;entryY=1;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_Napoj_Produkt" parent="1" edge="1" source="cls_Napoj" target="cls_Produkt" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.85;entryY=1;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_Kelner_Pracownik" parent="1" edge="1" source="cls_Kelner" target="cls_Pracownik" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.15;entryY=1;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_Kucharz_Pracownik" parent="1" edge="1" source="cls_Kucharz" target="cls_Pracownik" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.85;entryY=1;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Implementacja interfejsu -->
+        <mxCell id="e_Proc_Rabat" parent="1" edge="1" source="cls_ProcentowyRabat" target="cls_Rabat" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_Zestaw_Rabat" parent="1" edge="1" source="cls_ZestawRabat" target="cls_Rabat" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Kompozycja / agregacja -->
+        <mxCell id="e_Pozycja_Zamowienie" parent="1" edge="1" source="cls_Pozycja" target="cls_Zamowienie" style="endArrow=diamondThin;endFill=1;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_Restauracja_Menu" parent="1" edge="1" source="cls_Restauracja" target="cls_Menu" style="endArrow=diamondThin;endFill=1;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.35;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_Pracownik_Restauracja" parent="1" edge="1" source="cls_Pracownik" target="cls_Restauracja" style="endArrow=diamondThin;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_Stolik_Restauracja" parent="1" edge="1" source="cls_Stolik" target="cls_Restauracja" style="endArrow=diamondThin;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_Menu_Produkt" parent="1" edge="1" source="cls_Produkt" target="cls_Menu" style="endArrow=diamondThin;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="1060" />
+              <mxPoint x="20" y="235" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Asocjacje -->
+        <mxCell id="e_Menu_Zamowienie" parent="1" edge="1" source="cls_Menu" target="cls_Zamowienie" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.15;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="191" />
+              <mxPoint x="360" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_Kelner_Zamowienie" parent="1" edge="1" source="cls_Kelner" target="cls_Zamowienie" style="startArrow=open;startFill=0;endArrow=open;endFill=0;startSize=12;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="673" />
+              <mxPoint x="700" y="545" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_Zamowienie_Stolik" parent="1" edge="1" source="cls_Zamowienie" target="cls_Stolik" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="968" y="330" />
+              <mxPoint x="930" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_Pozycja_Produkt" parent="1" edge="1" source="cls_Pozycja" target="cls_Produkt" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="720" y="860" />
+              <mxPoint x="720" y="1100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_Zamowienie_Status" parent="1" edge="1" source="cls_Zamowienie" target="cls_Status" style="endArrow=open;endFill=0;dashed=1;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_Stolik_StatusStolika" parent="1" edge="1" source="cls_Stolik" target="cls_StatusStolika" style="endArrow=open;endFill=0;dashed=1;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Zależności -->
+        <mxCell id="e_Kucharz_Danie" parent="1" edge="1" source="cls_Kucharz" target="cls_Danie" style="endArrow=open;endFill=0;dashed=1;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="479" y="820" />
+              <mxPoint x="230" y="820" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_Zamowienie_Rabat" parent="1" edge="1" source="cls_Zamowienie" target="cls_Rabat" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.35;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
