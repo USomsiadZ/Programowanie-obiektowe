@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Poprawiony Diagram" id="wvI8iNs97JsuxsXfIHwF">
+    <mxGraphModel dx="1000" dy="1694" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Nw-RGfl1TovEfayo8RB--43" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;endSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="Nw-RGfl1TovEfayo8RB--14" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="4563" y="2188.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--7" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Menu&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- restauracja: Restauracja&lt;br/&gt;- oferta: List&amp;lt;Produkt&amp;gt;&lt;br/&gt;- zamowienie: Zamowienie&lt;br/&gt;- kolejneId: int&lt;br/&gt;- kolejneIdPracownika: int&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Menu()&lt;br/&gt;+ Uruchom(): void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="160" width="230" x="4428" y="1950.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--8" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Restauracja&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- nazwa: string&lt;br/&gt;- czyOtwarta: bool&lt;br/&gt;- pracownicy: List&amp;lt;Pracownik&amp;gt;&lt;br/&gt;- stoliki: List&amp;lt;Stolik&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Restauracja(nazwa)&lt;br/&gt;+ Otworz(): void&lt;br/&gt;+ Zamknij(): void&lt;br/&gt;+ Zatrudnij(p: Pracownik): void&lt;br/&gt;+ Zwolnij(p: Pracownik): void&lt;br/&gt;+ DodajStolik(s: Stolik): void&lt;br/&gt;+ ZnajdzWolnyStolik(miejsca: int): Stolik&lt;/p&gt;" vertex="1">
+          <mxGeometry height="212.5" width="250" x="5038" y="1754" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--9" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Stolik&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- numer: int&lt;br/&gt;- miejsca: int&lt;br/&gt;- status: StatusStolika&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Stolik(numer, miejsca)&lt;br/&gt;+ Rezerwuj(): void&lt;br/&gt;+ Zwolnij(): void&lt;br/&gt;+ Zajmij(): void&lt;br/&gt;+ OznaczJakoBrudny(): void&lt;br/&gt;+ Posprzataj(): void&lt;br/&gt;+ CzyWolny(): bool&lt;/p&gt;" vertex="1">
+          <mxGeometry height="205" width="220" x="5480" y="1758" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--10" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;&amp;laquo;enum&amp;raquo;&lt;br/&gt;StatusStolika&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;Wolny&lt;br/&gt;Zajety&lt;br/&gt;Rezerwacja&lt;br/&gt;Brudny&lt;/p&gt;" vertex="1">
+          <mxGeometry height="115" width="170" x="5808" y="1803" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--11" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«abstract»&lt;br&gt;&lt;i&gt;Pracownik&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# id: int&lt;br/&gt;# imie: string&lt;br/&gt;# pensja: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Pracownik(id, imie, pensja)&lt;br/&gt;&lt;i&gt;+ Pracuj(): void&lt;/i&gt;&lt;br/&gt;+ ToString(): string&lt;/p&gt;" vertex="1">
+          <mxGeometry height="162" width="235" x="5045.5" y="2106.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--12" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Kelner&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- rewir: int&lt;br&gt;- zamowienia: List&amp;lt;Zamowienie&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Kelner(id, imie, pensja, rewir)&lt;br&gt;+ Pracuj(): void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="120" width="230" x="5048" y="2384.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--13" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Kucharz&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- sekcja: string&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Kucharz(id, imie, pensja, sekcja)&lt;br/&gt;+ Gotuj(d: Danie): void&lt;br/&gt;+ Sprawdz(d: Danie): bool&lt;br/&gt;+ Pracuj(): void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="127" width="235" x="4708" y="2123.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--14" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Zamowienie&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: int&lt;br/&gt;- data: DateTime&lt;br/&gt;- suma: decimal&lt;br/&gt;- stan: Status&lt;br/&gt;- pozycje: List&amp;lt;Pozycja&amp;gt;&lt;br/&gt;- stolik: Stolik&lt;br/&gt;- kelner: Kelner&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Zamowienie(id, stolik, kelner)&lt;br/&gt;+ Dodaj(p: Pozycja): void&lt;br/&gt;+ Usun(p: Pozycja): void&lt;br/&gt;+ Zatwierdz(): void&lt;br/&gt;+ Oplac(r: Rabat): decimal&lt;br/&gt;+ Podsumuj(): decimal&lt;br/&gt;+ LiczbaPozycji(): int&lt;br/&gt;+ ZmienStan(s: Status): void&lt;br/&gt;+ AktualizujSume(): void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="292.5" width="250" x="5403" y="2297.75" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--15" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;&amp;laquo;enum&amp;raquo;&lt;br/&gt;Status&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;Nowe&lt;br/&gt;Przygotowanie&lt;br/&gt;Gotowe&lt;br/&gt;Podano&lt;br/&gt;Zakonczone&lt;/p&gt;" vertex="1">
+          <mxGeometry height="130" width="170" x="5768" y="2451.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--16" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;&amp;laquo;interface&amp;raquo;&lt;br/&gt;Rabat&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Oblicz(suma: decimal): decimal&lt;/p&gt;" vertex="1">
+          <mxGeometry height="85" width="220" x="5748" y="2328.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--17" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ProcentowyRabat&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- procent: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ ProcentowyRabat(procent)&lt;br/&gt;+ Oblicz(suma: decimal): decimal&lt;/p&gt;" vertex="1">
+          <mxGeometry height="110" width="240" x="5738" y="2140.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--18" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ZestawRabat&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- minPozycji: int&lt;br/&gt;- procentZnizki: decimal&lt;br/&gt;- liczbaPozycji: int&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ ZestawRabat(minPozycji, procentZnizki, liczbaPozycji)&lt;br/&gt;+ Oblicz(suma: decimal): decimal&lt;/p&gt;" vertex="1">
+          <mxGeometry height="145" width="255" x="6068" y="2297.75" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--19" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Pozycja&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- ilosc: int&lt;br/&gt;- cena: decimal&lt;br/&gt;- produkt: Produkt&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Pozycja(produkt, ilosc)&lt;br/&gt;+ Sumuj(): decimal&lt;br/&gt;+ ZmniejszIlosc(oIle: int): void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="140" width="225" x="5415.5" y="2668.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--20" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«abstract»&lt;br&gt;&lt;i&gt;Produkt&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# nazwa: string&lt;br/&gt;# bazowa: decimal&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Produkt(nazwa, bazowa)&lt;br/&gt;&lt;i&gt;+ Cena(): decimal&lt;/i&gt;&lt;br/&gt;+ ToString(): string&lt;/p&gt;" vertex="1">
+          <mxGeometry height="160" width="235" x="5048" y="2658.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--21" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Danie&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- czas: int&lt;br/&gt;- gotowe: bool&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Danie(nazwa, bazowa, czas)&lt;br/&gt;+ Przygotuj(): void&lt;br/&gt;+ Cena(): decimal&lt;/p&gt;" vertex="1">
+          <mxGeometry height="145" width="220" x="4715.5" y="2497.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--22" parent="1" style="shape=rectangle;html=1;whiteSpace=wrap;overflow=hidden;shadow=0;align=left;verticalAlign=top;spacing=0;spacingLeft=5;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Napoj&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- litraz: decimal&lt;br/&gt;- schlodzony: bool&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Napoj(nazwa, bazowa, litraz)&lt;br/&gt;+ Schlodz(): void&lt;br/&gt;+ Cena(): decimal&lt;/p&gt;" vertex="1">
+          <mxGeometry height="145" width="230" x="5050.5" y="2900.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--23" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=diamondThin;endFill=1;startSize=6;endSize=12;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="Nw-RGfl1TovEfayo8RB--7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--24" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamondThin;endFill=0;endSize=12;" target="Nw-RGfl1TovEfayo8RB--7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--25" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--21" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="Nw-RGfl1TovEfayo8RB--20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--26" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--22" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="Nw-RGfl1TovEfayo8RB--20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--27" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--12" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="Nw-RGfl1TovEfayo8RB--11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--28" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--13" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="Nw-RGfl1TovEfayo8RB--11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--29" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--17" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="Nw-RGfl1TovEfayo8RB--16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--30" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--18" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="Nw-RGfl1TovEfayo8RB--16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--31" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--19" style="endArrow=diamondThin;endFill=1;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="Nw-RGfl1TovEfayo8RB--14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--32" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--11" style="endArrow=diamondThin;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="Nw-RGfl1TovEfayo8RB--8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--33" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--9" style="endArrow=diamondThin;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="Nw-RGfl1TovEfayo8RB--8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--35" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--12" style="startArrow=open;startFill=0;endArrow=open;endFill=0;startSize=12;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="Nw-RGfl1TovEfayo8RB--14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--36" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--14" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" target="Nw-RGfl1TovEfayo8RB--9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--37" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--19" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="Nw-RGfl1TovEfayo8RB--20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--38" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--14" style="endArrow=open;endFill=0;dashed=1;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" target="Nw-RGfl1TovEfayo8RB--15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--39" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--9" style="endArrow=open;endFill=0;dashed=1;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="Nw-RGfl1TovEfayo8RB--10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--40" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--13" style="endArrow=open;endFill=0;dashed=1;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="Nw-RGfl1TovEfayo8RB--21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nw-RGfl1TovEfayo8RB--41" edge="1" parent="1" source="Nw-RGfl1TovEfayo8RB--14" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" target="Nw-RGfl1TovEfayo8RB--16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
