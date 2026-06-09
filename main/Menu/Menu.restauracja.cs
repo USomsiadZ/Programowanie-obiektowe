@@ -90,7 +90,7 @@ public partial class Menu
 
             Console.WriteLine($"Pomyślnie dodano '{nazwa}' do menu");
         }
-        catch
+        catch (FormatException)
         {
             Console.WriteLine("Błędne dane, spróbuj ponownie");
         }

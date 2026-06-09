@@ -242,6 +242,7 @@ public partial class Menu
 
         foreach (var poz in pozycje)
         {
+                
             if (poz.readProdukt is Napoj napoj)
             {
                 Console.Write($"Schłodzić {napoj.readNazwa}? (t/n): ");
@@ -251,10 +252,9 @@ public partial class Menu
             }
             else if (poz.readProdukt is Danie danie)
             {
-                Console.Write("Danie");
                 wybranyKucharz.Gotuj(danie);
                 if (wybranyKucharz.Sprawdz(danie))
-                    Console.WriteLine($" '{danie.readNazwa}' gotowe");
+                    Console.WriteLine($" '{danie.readNazwa}' jest gotowa do wydania.");
             }
         }
 
@@ -267,6 +267,12 @@ public partial class Menu
         if (zamowienie == null)
         {
             Console.WriteLine("Brak aktywnego zamówienia");
+            return;
+        }
+        
+        if (zamowienie.readStan == Status.Podano)
+        {
+            Console.WriteLine("Zamówienie zostało już podane.");
             return;
         }
 
@@ -309,7 +315,8 @@ public partial class Menu
             Console.WriteLine("Nie można opłacić zamówienia, które nie zostało podane do stolika");
             return;
         }
-
+        
+        Console.WriteLine("/nPodsumowanie:");
         PokazZamowienie();
 
         Console.WriteLine("Wybierz rabat:\n1. Rabat procentowy\n2. Rabat za zestaw (15% od 3 pozycji)\n3. Brak rabatu\nWybierz opcję: ");
@@ -325,24 +332,32 @@ public partial class Menu
                 return;
             }
             wybranyRabat = new ProcentowyRabat(procent);
+            Console.WriteLine($"Pomyślnie dodano rabat do rachunku.\n");
         }
         else if (opcjaRabatu == "2")
         {
+            if (zamowienie.LiczbaPozycji() < 3)
+            {
+                Console.WriteLine("Nie przyznano rabatu, za mało pozycji w zamówieniu.");
+                return;
+            }
             wybranyRabat = new ZestawRabat(3, 15, zamowienie.LiczbaPozycji());
         }
         else
         {
             wybranyRabat = new ProcentowyRabat(0);
         }
-
+        
+        decimal kwotaKoncowa = zamowienie.Oplac(wybranyRabat);
+        
+        Console.WriteLine($"Do zapłaty: {kwotaKoncowa:F2}");
         Console.WriteLine("Wybierz formę płatności:\n1. Gotówka\n2. Karta\nWybierz opcję: ");
         string formaPlatnosci = Console.ReadLine() == "1" ? "Gotówka" : "Karta";
+        
 
-        decimal kwotaKoncowa = zamowienie.Oplac(wybranyRabat);
-
-        Console.WriteLine($"Zamówienie ID: {zamowienie.readId} opłacone");
+        Console.WriteLine($"\n \nZamówienie numer {zamowienie.readId} zostało opłacone");
         Console.WriteLine($"Metoda płatności: {formaPlatnosci}");
-        Console.WriteLine($"Kwota: {kwotaKoncowa} zł");
+        Console.WriteLine($"Kwota: {kwotaKoncowa:F2} zł");
 
         zamowienie.readStolik.OznaczJakoBrudny();
         zamowienie = null;
