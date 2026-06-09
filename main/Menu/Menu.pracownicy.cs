@@ -9,13 +9,7 @@ public partial class Menu
         bool dziala = true;
         while (dziala)
         {
-            Console.WriteLine("=== Zarządzanie pracownikami ===");
-            Console.WriteLine("1. Sprawdź listę pracowników.");
-            Console.WriteLine("2. Dodaj nowego pracownika.");
-            Console.WriteLine("3. Zwolnij pracownika.");
-            Console.WriteLine("0. Powrót.");
-            Console.Write("Wybór: ");
-
+            Console.WriteLine("=== Zarządzanie pracownikami ===\n1. Sprawdź obecną listę pracowników\n2. Dodaj nowego pracownika\n3. Zwolnij pracownika\n0. Powrót\nWybierz opcję: ");
             string wybor = Console.ReadLine() ?? "";
             switch (wybor)
             {
@@ -32,7 +26,7 @@ public partial class Menu
                     dziala = false;
                     break;
                 default:
-                    Console.WriteLine("Niepoprawny wybór. Spróbuj ponownie.");
+                    Console.WriteLine("Niepoprawny wybór, spróbuj ponownie");
                     break;
             }
         }
@@ -43,7 +37,7 @@ public partial class Menu
         var pracownicy = restauracja.readPracownicy;
         if (pracownicy.Count == 0)
         {
-            Console.WriteLine("Brak pracowników.");
+            Console.WriteLine("Brak pracowników");
             return;
         }
 
@@ -56,13 +50,13 @@ public partial class Menu
 
     private void DodajPracownika()
     {
-        Console.WriteLine("Typ pracownika: 1. Kelner  2. Kucharz");
-        Console.Write("Wybór: ");
+        Console.WriteLine("Typ pracownika:\n1. Kelner\n2. Kucharz");
+        Console.Write("Wybierz opcję: ");
         string typ = Console.ReadLine() ?? "";
 
         if (typ != "1" && typ != "2")
         {
-            Console.WriteLine("Niepoprawny wybór.");
+            Console.WriteLine("Niepoprawny wybór, spróbuj ponownie");
             return;
         }
 
@@ -91,7 +85,7 @@ public partial class Menu
         }
         catch (FormatException)
         {
-            Console.WriteLine("Niepoprawne dane.");
+            Console.WriteLine("Niepoprawne dane, spróbuj ponownie");
         }
     }
 
@@ -100,12 +94,12 @@ public partial class Menu
         var pracownicy = restauracja.readPracownicy;
         if (pracownicy.Count == 0)
         {
-            Console.WriteLine("Brak pracowników.");
+            Console.WriteLine("Brak pracowników");
             return;
         }
         PokazPracownikow();
 
-        Console.Write("Podaj numer z listy pracownika do zwolnienia: ");
+        Console.Write("Podaj ID pracownika do zwolnienia: ");
         try
         {
             int nr = int.Parse(Console.ReadLine()!);
@@ -115,11 +109,11 @@ public partial class Menu
         }
         catch (FormatException)
         {
-            Console.WriteLine("Niepoprawne dane.");
+            Console.WriteLine("Niepoprawne dane, spróbuj ponownie");
         }
         catch (ArgumentOutOfRangeException)
         {
-            Console.WriteLine("Podano niepoprawny numer pracownika.");
+            Console.WriteLine("Podano niepoprawny ID pracownika, spróbuj ponownie");
         }
     }
 }

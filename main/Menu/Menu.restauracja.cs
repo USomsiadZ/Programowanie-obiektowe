@@ -9,15 +9,7 @@ public partial class Menu
         bool dziala = true;
         while (dziala)
         {
-            Console.WriteLine("\n=== Zarządzanie restauracją ===");
-            Console.WriteLine("1. Otwórz restaurację.");
-            Console.WriteLine("2. Zamknij restaurację.");
-            Console.WriteLine("3. Wyświetl aktualne menu.");
-            Console.WriteLine("4. Dodaj nową pozycję do menu.");
-            Console.WriteLine("5. Usuń pozycję z menu.");
-            Console.WriteLine("0. Powrót.");
-            Console.Write("Wybierz opcję: ");
-
+            Console.WriteLine("\n=== Zarządzanie restauracją ===\n1. Otwórz restaurację\n2. Zamknij restaurację\n3. Wyświetl aktualne menu\n4. Dodaj nową pozycję do menu\n5. Usuń pozycję z menu\n0. Powrót\nWybierz opcję: ");
             string wybor = Console.ReadLine() ?? "";
             switch (wybor)
             {
@@ -40,7 +32,7 @@ public partial class Menu
                     dziala = false;
                     break;
                 default:
-                    Console.WriteLine("Niepoprawny wybór. Spróbuj ponownie.");
+                    Console.WriteLine("Niepoprawny wybór, spróbuj ponownie");
                     break;
             }
         }
@@ -51,7 +43,7 @@ public partial class Menu
         Console.WriteLine("Menu:");
         if (oferta.Count == 0)
         {
-            Console.WriteLine("Brak pozycji w menu.");
+            Console.WriteLine("Menu jest puste");
             return;
         }
 
@@ -66,12 +58,12 @@ public partial class Menu
         Console.WriteLine("Jaką pozycję chcesz dodać?");
         Console.WriteLine("1. Danie");
         Console.WriteLine("2. Napój");
-        Console.Write("Wybór: ");
+        Console.Write("Wybierz opcję: ");
 
         string typ = Console.ReadLine() ?? "";
         if (typ != "1" && typ != "2")
         {
-            Console.WriteLine("Nieznany typ. Anulowano.");
+            Console.WriteLine("Nieznana pozycja, anulowano");
             return;
         }
 
@@ -91,16 +83,16 @@ public partial class Menu
             }
             else
             {
-                Console.Write("Podaj pojemność w litrach: ");
+                Console.Write("Podaj pojemność (w litrach): ");
                 decimal litraz = decimal.Parse(Console.ReadLine()!);
                 oferta.Add(new Napoj(nazwa, cena, litraz));
             }
 
-            Console.WriteLine($"Pomyślnie dodano '{nazwa}' do menu.");
+            Console.WriteLine($"Pomyślnie dodano '{nazwa}' do menu");
         }
         catch
         {
-            Console.WriteLine("Błędne dane.");
+            Console.WriteLine("Błędne dane, spróbuj ponownie");
         }
     }
 
@@ -108,7 +100,7 @@ public partial class Menu
     {
         if (oferta.Count == 0)
         {
-            Console.WriteLine("Menu jest puste.");
+            Console.WriteLine("Menu jest puste");
             return;
         }
 
@@ -123,7 +115,7 @@ public partial class Menu
         }
         else
         {
-            Console.WriteLine("Niepoprawny numer.");
+            Console.WriteLine("Niepoprawny wybór, spróbuj ponownie");
         }
     }
 }

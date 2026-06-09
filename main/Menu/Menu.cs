@@ -15,9 +15,9 @@ public partial class Menu
 
     public Menu()
     {
-        restauracja = new Restauracja("U Łukasza");
-        restauracja.Zatrudnij(new Kelner(1, "Jan", 3000, 1));
-        restauracja.Zatrudnij(new Kucharz(2, "Anna", 3500, "kuchnia"));
+        restauracja = new Restauracja("U Łukaszka");
+        restauracja.Zatrudnij(new Kelner(1, "Janek", 3000, 1));
+        restauracja.Zatrudnij(new Kucharz(2, "Ania", 3500, "kuchnia"));
         restauracja.DodajStolik(new Stolik(1, 4));
         restauracja.DodajStolik(new Stolik(2, 2));
         
@@ -40,13 +40,7 @@ public partial class Menu
 
     private void Wyswietl()
     {
-        Console.WriteLine("\n=== System Zarządzania Restauracją ===");
-        Console.WriteLine("1. Zarządzaj zamówieniem.");
-        Console.WriteLine("2. Zarządzaj stolikiem.");
-        Console.WriteLine("3. Zarządzaj pracownikami.");
-        Console.WriteLine("4. Zarządzaj restauracją.");
-        Console.WriteLine("0. Wyjdź z systemu.");
-        Console.Write("Wybór: ");
+        Console.WriteLine("\n=== System Zarządzania Restauracją ===\n1. Zarządzaj zamówieniem\n2. Zarządzaj stolikiem\n3. Zarządzaj pracownikami\n4. Zarządzaj restauracją\n0. Wyjdź z systemu\nWybierz opcję: ");
     }
 
     public void Uruchom()
@@ -78,7 +72,7 @@ public partial class Menu
                     Console.WriteLine("Zamykanie systemu...");
                     break;
                 default:
-                    Console.WriteLine("Niepoprawny wybór. Spróbuj ponownie.");
+                    Console.WriteLine("Niepoprawny wybór, spróbuj ponownie.");
                     break;
             }
         }

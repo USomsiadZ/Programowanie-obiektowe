@@ -29,7 +29,7 @@ public class Restauracja
     {
         if (czyOtwarta)
         {
-            Console.WriteLine("Błąd: Restauracja jest już otwarta!"); // zmienic na blad
+            Console.WriteLine("Restauracja jest już otwarta!");
         }
         else
         {
@@ -43,7 +43,7 @@ public class Restauracja
         if (czyOtwarta)
         {
             czyOtwarta = false;
-            Console.WriteLine("Restauracja została zamknięta."); // zmienic na blad
+            Console.WriteLine("Restauracja została zamknięta");
         }
         else
         {

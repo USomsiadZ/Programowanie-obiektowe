@@ -4,9 +4,6 @@ public class Napoj : Produkt
 {
     private decimal litraz;
     private bool schlodzony;
-
-    //public override string nazwa { get; set; }
-
     public string readNazwa => nazwa;
     public decimal readBazowa => bazowa;
     public decimal readLitraz => litraz;
@@ -23,11 +20,11 @@ public class Napoj : Produkt
     {
         if (schlodzony)
         {
-            Console.WriteLine("Napój jest już schłodzony.");
+            Console.WriteLine("Napój został już schłodzony");
             return;
         }
         schlodzony = true;
-        Console.WriteLine("Napój został schłodzony.");
+        Console.WriteLine("Napój został schłodzony");
     }
 
     public override decimal Cena()
