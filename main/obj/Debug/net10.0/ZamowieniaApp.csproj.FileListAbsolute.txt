@@ -1,0 +1,15 @@
+/Users/hubert/Github/Programowanie-obiektowe/main/bin/Debug/net10.0/ZamowieniaApp
+/Users/hubert/Github/Programowanie-obiektowe/main/bin/Debug/net10.0/ZamowieniaApp.deps.json
+/Users/hubert/Github/Programowanie-obiektowe/main/bin/Debug/net10.0/ZamowieniaApp.runtimeconfig.json
+/Users/hubert/Github/Programowanie-obiektowe/main/bin/Debug/net10.0/ZamowieniaApp.dll
+/Users/hubert/Github/Programowanie-obiektowe/main/bin/Debug/net10.0/ZamowieniaApp.pdb
+/Users/hubert/Github/Programowanie-obiektowe/main/obj/Debug/net10.0/ZamowieniaApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hubert/Github/Programowanie-obiektowe/main/obj/Debug/net10.0/ZamowieniaApp.AssemblyInfoInputs.cache
+/Users/hubert/Github/Programowanie-obiektowe/main/obj/Debug/net10.0/ZamowieniaApp.AssemblyInfo.cs
+/Users/hubert/Github/Programowanie-obiektowe/main/obj/Debug/net10.0/ZamowieniaApp.csproj.CoreCompileInputs.cache
+/Users/hubert/Github/Programowanie-obiektowe/main/obj/Debug/net10.0/ZamowieniaApp.sourcelink.json
+/Users/hubert/Github/Programowanie-obiektowe/main/obj/Debug/net10.0/ZamowieniaApp.dll
+/Users/hubert/Github/Programowanie-obiektowe/main/obj/Debug/net10.0/refint/ZamowieniaApp.dll
+/Users/hubert/Github/Programowanie-obiektowe/main/obj/Debug/net10.0/ZamowieniaApp.pdb
+/Users/hubert/Github/Programowanie-obiektowe/main/obj/Debug/net10.0/ZamowieniaApp.genruntimeconfig.cache
+/Users/hubert/Github/Programowanie-obiektowe/main/obj/Debug/net10.0/ref/ZamowieniaApp.dll
